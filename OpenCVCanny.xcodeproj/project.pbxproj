@@ -19,6 +19,8 @@
 		EF5839532C049C5900CE9337 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5839522C049C5900CE9337 /* CoreFoundation.framework */; };
 		EF5839552C049C6500CE9337 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5839542C049C6500CE9337 /* Accelerate.framework */; };
 		EF58395B2C049E3D00CE9337 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF58395A2C049E3C00CE9337 /* OpenCVWrapper.mm */; };
+		EF5839682C04FEFE00CE9337 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5839672C04FEFE00CE9337 /* AVFoundation.framework */; };
+		EF5839692C05052400CE9337 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5839642C04FE8900CE9337 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		EF5839572C049DB100CE9337 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		EF58395A2C049E3C00CE9337 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		EF58395D2C049F8800CE9337 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		EF5839642C04FE8900CE9337 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = OpenCVCanny/opencv2.framework; sourceTree = "<group>"; };
+		EF5839672C04FEFE00CE9337 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF5839692C05052400CE9337 /* opencv2.framework in Frameworks */,
+				EF5839682C04FEFE00CE9337 /* AVFoundation.framework in Frameworks */,
 				EF5839552C049C6500CE9337 /* Accelerate.framework in Frameworks */,
 				EF5839532C049C5900CE9337 /* CoreFoundation.framework in Frameworks */,
 				EF5839512C049C4D00CE9337 /* CoreMedia.framework in Frameworks */,
@@ -95,11 +101,13 @@
 		EF58394B2C049BB000CE9337 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF5839672C04FEFE00CE9337 /* AVFoundation.framework */,
 				EF5839542C049C6500CE9337 /* Accelerate.framework */,
 				EF5839522C049C5900CE9337 /* CoreFoundation.framework */,
 				EF5839502C049C4D00CE9337 /* CoreMedia.framework */,
 				EF58394E2C049C3700CE9337 /* CoreGraphics.framework */,
 				EF58394C2C049BBA00CE9337 /* AssetsLibrary.framework */,
+				EF5839642C04FE8900CE9337 /* opencv2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

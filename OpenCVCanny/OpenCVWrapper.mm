@@ -2,30 +2,86 @@
 //  OpenCVWrapper.m
 //  OpenCVCanny
 //
-//  Created by Dianelys Saldaña on 5/27/24.
+//  Created by Dianelys Saldaña on 5/26/24.
 //
 
+#import <opencv2/opencv.hpp>
+#import <opencv2/imgcodecs/ios.h>
+#import <opencv2/videoio/cap_ios.h>
 #import "OpenCVWrapper.h"
 
-@interface OpenCVWrapper ()
+using namespace cv;
 
+@interface OpenCVWrapper () <CvVideoCameraDelegate>
 @end
 
+Mat src, src_gray;
+Mat dst, detected_edges;
+
 @implementation OpenCVWrapper
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+{
+    CvVideoCamera * videoCamera;
+    Boolean shouldProccess;
+    int edge;
+    int blur;
+    int angle;
 }
 
-/*
-#pragma mark - Navigation
+-(id)initWithImageView:(UIImageView*)iv
+{
+    edge = 3;
+    blur = 3;
+    angle = 120;
+    shouldProccess = false;
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:iv];
+    
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.grayscaleMode = NO;
+    videoCamera.defaultFPS = 30;
+    videoCamera.delegate = self;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [videoCamera start];
+    });
+    return self;
 }
-*/
+
+- (void)setEdgeGradient:(int)value
+{
+    edge = value;
+}
+
+- (void)setBlur:(int)value
+{
+    blur = value;
+}
+
+- (void)setAngle:(int)value
+{
+    angle = value;
+}
+
+#ifdef __cplusplus
+- (void)processImage:(Mat&)image
+{
+    if(shouldProccess){
+        cvtColor(image, image, COLOR_RGB2GRAY, 0);
+        cv::blur(image, image, cv::Size(blur, blur));
+        Canny(image, image, angle, 60 + angle, edge, false);
+    }
+}
+#endif
+
+-(void)startCamera
+{
+    shouldProccess = true;
+}
+
+-(void)stopCamera
+{
+    shouldProccess = false;
+}
 
 @end

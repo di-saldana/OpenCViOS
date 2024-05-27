@@ -2,7 +2,7 @@
 //  PrefixHeader.pch
 //  OpenCVCanny
 //
-//  Created by Dianelys Saldaña on 5/27/24.
+//  Created by Dianelys Saldaña on 5/26/24.
 //
 
 #ifndef PrefixHeader_pch
@@ -12,6 +12,8 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #ifdef __cplusplus
 #include <opencv2/opencv.hpp>
+#import <opencv2/videoio/cap_ios.h>
+#import <opencv2/imgcodecs/ios.h>
 #endif
 
 #endif /* PrefixHeader_pch */

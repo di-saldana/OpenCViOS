@@ -19,14 +19,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-7N-c1W">
                                 <rect key="frame" x="16" y="76" width="361" height="548"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3WX-VM-Nwk">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="3WX-VM-Nwk">
                                 <rect key="frame" x="83" y="652" width="277" height="30"/>
+                                <connections>
+                                    <action selector="blurSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="wb8-0y-eyn"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-dC-Wvb">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-dC-Wvb">
                                 <rect key="frame" x="83" y="689" width="277" height="30"/>
+                                <connections>
+                                    <action selector="edgeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="c1H-Zb-qAX"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ab8-jn-0kO">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="451" translatesAutoresizingMaskIntoConstraints="NO" id="Ab8-jn-0kO">
                                 <rect key="frame" x="83" y="726" width="277" height="30"/>
+                                <connections>
+                                    <action selector="angleSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="4kH-pq-GKE"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-1p-Gwq">
                                 <rect key="frame" x="25" y="656" width="31" height="21"/>
