@@ -1,0 +1,56 @@
+# Ignore build products
+build/
+DerivedData/
+*.xcworkspace
+xcuserdata/
+
+# Ignore temporary files
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.pbxuser
+*.pbxproj.user
+
+# Ignore Xcode specific directories and files
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/*
+
+# Ignore macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon must end with two \r
+Icon
+Icon\r\r
+
+# Trashes
+.Trashes
+
+# Ignore the frameworks directory
+opencv2.framework/
+opencv2.framework/**
+
+# Ignore Carthage/Checkouts
+Carthage/Checkouts
+
+# Ignore Pods directory
+Pods/
+
+# Ignore Swift Package Manager artifacts
+/.build/
+Package.resolved
+
+# Ignore fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
